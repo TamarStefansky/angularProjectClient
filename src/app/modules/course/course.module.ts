@@ -9,9 +9,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { CourseService } from 'src/app/services/course.service';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { CategoryService } from 'src/app/services/category.service';
+import {MatDividerModule} from '@angular/material/divider';
+import { categoryService } from 'src/app/services/category.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LecturerService } from 'src/app/services/lecture.service';
+import {MatIconModule} from '@angular/material/icon';
+import { SyllabusDialogComponent } from './syllabus-dialog/syllabus-dialog.component';
+
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -21,6 +31,7 @@ import { LecturerService } from 'src/app/services/lecture.service';
     AllCoursesComponent,
     CourseDetailesComponent,
     EditCourseComponent,
+    SyllabusDialogComponent
     
   ],
   imports: [
@@ -29,12 +40,18 @@ import { LecturerService } from 'src/app/services/lecture.service';
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
+    MatDividerModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    MatIconModule,
+    MatSelectModule,
+    MatInputModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatDialogModule
   ],
 
-  exports:[AllCoursesComponent,AddCourseComponent,CourseDetailesComponent],
-  providers:[HttpClient,CourseService,CategoryService,LecturerService]
+  exports:[AllCoursesComponent,AddCourseComponent, EditCourseComponent],
+  providers:[HttpClient, CourseService, categoryService],
 })
 export class CourseModule { }

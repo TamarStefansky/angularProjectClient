@@ -1,6 +1,11 @@
+<!-- <div *ngFor="let oneCourse of coursesList">
+    <app-course-detailes [course]="oneCourse"></app-course-detailes>
+</div> -->
+
+
 <mat-grid-list cols="2" rowHeight="3:2">
-    <mat-grid-tile *ngFor="let course of coursesList">
-        <app-course-detailes [course]="course"></app-course-detailes>
+    <mat-grid-tile *ngFor="let oneCourse of coursesList">
+        <app-course-detailes [course]="oneCourse"></app-course-detailes>
         <!-- JSON.stringify({{course._id}}) -->
     </mat-grid-tile>
    

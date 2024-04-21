@@ -1,1 +1,54 @@
-<p>edit-course works!</p>
+<div class="container">
+    <form [formGroup]="MyFormGroup">
+        <mat-form-field>
+            <mat-label>Enter course name</mat-label>
+            <input matInput formControlName="nameCourse">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select course category</mat-label>
+            <mat-select formControlName="kodeKategory">
+                <mat-option [value]="category._id" *ngFor="let category of categories">
+                    {{category.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>amountLessons</mat-label>
+            <input matInput formControlName="amountLessons">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>startCourseDate</mat-label>
+            <input matInput formControlName="startCourseDate">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>syllabusArr</mat-label>
+            <input matInput formControlName="syllabusArr">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label >wayLearning</mat-label>
+            <mat-select formControlName="wayLearning">
+                <mat-option value="zoom">zoom</mat-option>
+                <mat-option value="frontaly">frontaly</mat-option>
+    
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>image</mat-label>
+            <input matInput formControlName="image" type="url">
+            <img [src]="MyFormGroup.controls['image'].value" *ngIf="MyFormGroup.controls['image'].value"
+                style="max-width: 100px; max-height: 100px;">
+        </mat-form-field>
+        
+        <mat-form-field *ngFor="let videoCtrl of MyFormGroup.get('syllabusArr')['controls']; let i = index" style="display: flex; align-items: center;">
+            <mat-label style="flex: 1;">Enter lesson {{ i + 1 }}</mat-label>
+            <div style="flex: 1; position: relative;">
+              <input matInput [formControl]="videoCtrl" style="width: 100%;">
+              <mat-icon  (click)="removeVideo(i)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;">cancel</mat-icon>
+            </div>
+          </mat-form-field>
+          
+          <button mat-raised-button (click)="addVideo()">Add lesson</button>
+      
+        <button mat-raised-button color="primary" (click)="saveCourse()">add course</button>
+    </form>
+    </div>

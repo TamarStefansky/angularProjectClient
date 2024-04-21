@@ -13,6 +13,7 @@ import { LecturerService } from 'src/app/services/lecture.service';
 
 
 
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -29,7 +30,7 @@ import { LecturerService } from 'src/app/services/lecture.service';
     HttpClientModule
 
   ],
-  providers:[UserService,LecturerService],
+  providers:[UserService, LecturerService],
 
   exports:[LoginComponent,RegisterComponent]
 })

@@ -54,7 +54,7 @@ body {
 
 $input-placeholder-color: #7e8ba3;
 
-input ,select{
+input, select {
   border: 0;
   font: inherit;
 
@@ -70,7 +70,7 @@ input ,select{
     margin-bottom: 1rem;
   }
 
-  input ,select {
+  input, select {
     outline: 0;
     padding: .5rem 1rem;
 
@@ -116,7 +116,7 @@ a {
   text-align: center;
   padding: 4rem 2rem;
 
-  input,select {
+  input, select {
     border: 1px solid #242c37;
     border-radius: 999px;
     background-color: transparent;

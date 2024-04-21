@@ -91,12 +91,6 @@ section .signin .content h2
   color: #0f0;
   text-transform: uppercase;
 }
-.eal{
-  color: #0f0;
-  background-color: transparent;
-  font-size:20px;
-  
-}
 section .signin .content .form 
 {
   width: 100%;
@@ -151,7 +145,7 @@ section .signin .content .form .inputBox i
   color: #fff;
   text-decoration: none;
 }
-.signin .content .form .links a:nth-child(2)
+.signin .content .form .links a
 {
   color: #0f0;
   font-weight: 600;
@@ -165,6 +159,11 @@ section .signin .content .form .inputBox i
   font-size: 1.35em;
   letter-spacing: 0.05em;
   cursor: pointer;
+}
+.lecture{
+    color: #0f0;
+    background-color: transparent;
+    font-size: 20px;
 }
 input[type="submit"]:active
 {
@@ -185,8 +184,4 @@ input[type="submit"]:active
     width: calc(20vw - 2px);
     height: calc(20vw - 2px);
   }
-}
-
-body {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }

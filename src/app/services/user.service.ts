@@ -19,6 +19,7 @@ export class UserService{
       }
 
     addUser(user:User):Observable<any>{
+        console.log(user.name);
         return this._http.post<any>("http://localhost:8787/api/users/",user);
     }
 }

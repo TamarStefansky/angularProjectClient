@@ -1,26 +1,26 @@
 export class Course{
-
-    nameCourse: String;
-    kodeKategory: String;
+    nameCourse: string;
+    kodeCategory: number;
     amountLessons: Number;
     startCourseDate: Date;
-    syllabusArr: String;
-    wayLearning: String;
-    kodeLecture:String;
-    image: String; 
+    syllabusArr: string[];
+    wayLearning: string;
+    kodeLecture:string;
+    image: string ; 
 
 
-    constructor( nameCourse: string, kodeKategory: String, amountLessons: number,
-        startCourseDate: Date, syllabusArr: string, wayLearning: String, kodeLecture:String, image: string  ) {
-            
-        this.nameCourse = nameCourse;
-        this.kodeKategory = kodeKategory;
+    /**
+     *
+     */
+    constructor( name: string, category: number, amountLessons: number,
+        Date: Date, syllabusArr: string[], wayLearning: string, /*kodeLecture:string, */image: string  ) {
+        this.nameCourse = name;
+        this.kodeCategory = category;
         this.amountLessons = amountLessons;
-        this.startCourseDate = startCourseDate;
+        this.startCourseDate = Date;
         this.syllabusArr = syllabusArr;
         this.wayLearning = wayLearning;
-        this.kodeLecture=kodeLecture;
+        // this.kodeLecture=kodeLecture;
         this.image = image;
     }
 }
-

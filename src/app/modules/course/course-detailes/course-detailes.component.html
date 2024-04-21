@@ -3,20 +3,21 @@
       <mat-card-title>{{course.nameCourse}}</mat-card-title>
     </mat-card-header>
     <img mat-card-image [src]="course.image" alt="Photo of a Shiba Inu">
+    <br>
+    <mat-divider></mat-divider>
     <mat-card-content>
-    
+        <mat-card-subtitle>aount of lessons: {{course.amountLessons}}</mat-card-subtitle>
+        <mat-card-subtitle>way learning: {{course.wayLearning}}</mat-card-subtitle>
     </mat-card-content>
-    <mat-card-subtitle>amountLessons: {{course.amountLessons}}</mat-card-subtitle>
-    <mat-card-subtitle>wayLearning: {{course.wayLearning}}</mat-card-subtitle>
+    <!-- (click)="openDialog()"
+    *ngIf="myCourse()" (click)="editDetail()" -->
+
+    <div style="display: flex;">
+        <button mat-button (click)="openDialog()">
+            <mat-icon>visibility_on</mat-icon>sylibus</button>
+        <button mat-raised-button color="primary"  *ngIf="myCourse()" (click)="editDetail()">
+            <mat-icon>edit</mat-icon>edit course
+        </button>
+    </div>
   </mat-card>
-
-
-
-
-
-
-
-
-
-  
   

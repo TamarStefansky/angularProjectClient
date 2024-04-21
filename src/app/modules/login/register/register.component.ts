@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators,ValidatorFn } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
@@ -12,22 +12,25 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-   nameFromLogin:string;
-   registerForm: FormGroup;
-
-
-
   
   hide: true;
   userToAdd:User;
+  registerForm: FormGroup;
+  loginName:string;
 
   addUser(){
-    this.userToAdd = new User(this.registerForm.value["username"], this.registerForm.value["address"], this.registerForm.value["email"], this.registerForm.value["password"]);
+    console.log(this.registerForm.value["username"])
+    this.userToAdd = new User(
+      this.registerForm.value["username"], 
+      this.registerForm.value["address"], 
+      this.registerForm.value["email"], 
+      this.registerForm.value["password"]
+    );
     this._userService.addUser(this.userToAdd).subscribe(
       res=>{
-        console.log("register user "+this.registerForm.value["username"]+" overed successfully!");
-        sessionStorage.setItem('userName', this.registerForm.value["username"]);
-        sessionStorage.setItem('userPassword', this.registerForm.value["password"]);
+        console.log("register user "+this.registerForm["username"]+" overed successfully!");
+        sessionStorage.setItem('userName', this.addUser["name"]);
+        sessionStorage.setItem('userPassword', this.addUser["password"]);
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -43,22 +46,22 @@ export class RegisterComponent {
     )
   }
   constructor(private _userService: UserService, private _router:Router) {
-    
-   const storedJsonString = localStorage.getItem('userToAdd');
-   const storedObject = JSON.parse(storedJsonString);
-   if(storedObject!=null&&storedObject!=undefined)
-     this.nameFromLogin=storedObject;
-     else{
-      this.nameFromLogin="";
-  
-     }
-     this.registerForm=new FormGroup({
-      "username": new FormControl(this.nameFromLogin, Validators.required),
+    const storage=localStorage.getItem("userToAdd");
+    const storageObject=JSON.parse(storage);
+    if(storageObject!=null&&storageObject!=undefined){
+      this.loginName=storageObject;
+    }
+    else{
+      this.loginName="";
+    }
+
+    this.registerForm=new FormGroup({
+      "username": new FormControl(this.loginName, Validators.required),
       "email":  new FormControl('', [Validators.email,Validators.required]),
       "address": new FormControl('', Validators.required),
       "password": new FormControl('', Validators.required)
     });
-   }
-   
+    
+  }
 
 }

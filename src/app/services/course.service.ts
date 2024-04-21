@@ -14,8 +14,14 @@ export class CourseService{
         return this._http.get<Course[]>(this._baseUrl);
     }
 
-    postCourse(course: any): Observable<boolean> {
-        return this._http.post<boolean>("http://localhost:8787/api/courses/", course);
+
+    addCourse(courseToAdd:Course):Observable<boolean>{
+        return this._http.post<boolean>(this._baseUrl, courseToAdd)
     }
-    
+    getCourseById(courseId: string): Observable<Course> {
+        return this._http.get<Course>(`/api/courses/${courseId}`);
+    }
+      putCourse(updateCourse: Course, id: String): Observable<boolean> {
+        return this._http.put<boolean>("/api/courses/" + id, updateCourse)
+    }
 }

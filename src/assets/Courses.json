@@ -1,0 +1,29 @@
+[
+  {    "nameCourse": "Algorithm",
+    "kodeKategory": 1,
+    "amountLessons": 5,
+    "startCourseDate": "07/03/2024",
+    "syllabusArr": [ "lesson1", "lesson2", "lesson3" ],
+    "wayLearning": "zoom",
+    "kodeLecture": 1,
+    "image": "https://mui.com/static/images/cards/contemplative-reptile.jpg"
+  },
+{    "nameCourse": "Math",
+    "kodeKategory": 2,
+    "amountLessons": 10,
+    "startCourseDate": "07/03/2024",
+    "syllabusArr": [ "lesson1", "lesson2", "lesson3" ],
+    "wayLearning": "frontal",
+    "kodeLecture": 2,
+    "image": "https://mui.com/static/images/cards/contemplative-reptile.jpg"
+  },
+{    "nameCourse": "DataStructories",
+    "kodeKategory": 3,
+    "amountLessons": 20,
+    "startCourseDate": "07/03/2024",
+    "syllabusArr": [ "lesson1", "lesson2", "lesson3" ],
+    "wayLearning": "zoom",
+    "kodeLecture": 3,
+    "image": "https://mui.com/static/images/cards/contemplative-reptile.jpg"
+  }
+]
